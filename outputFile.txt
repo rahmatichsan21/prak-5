@@ -1,0 +1,33 @@
+******************************************************
+Number of employees working as MANAGER are: 1
+******************************************************
+1. Manager Details:
+Store Details: Store123
+Employee Name: John Doe
+Base Pay: $5000.0
+Number of Hours worked: 40.0hrs
+Payment Rate per hour: $20.0/hr
+Total Sales in store: $50000.0
+Sales done: $10000.0
+Percentage of sales done: 20.00%
+Gross Payment: $6380.0
+Remaining store revenue: $36253.8
+******************************************************
+Number of employees working as SALES ASSOCIATES are: 2
+******************************************************
+Store Details: Store456
+Employee Name: Jane Smith
+Base Pay: $10.0
+Number of Hours worked: 30.0hrs
+Payment Rate per hour: $15.0/hr
+Sales Rate: 1000.0%
+Total commission: $1.0
+Gross Payment: $461.0
+Store Details: Store123
+Employee Name: Jane Smith
+Base Pay: $100.0
+Number of Hours worked: 30.0hrs
+Payment Rate per hour: $10.0/hr
+Sales Rate: 10000.0%
+Total commission: $10.0
+Gross Payment: $410.0
