@@ -29,6 +29,7 @@ public class StoreDriver {
         //1. Declare variables managerCount, salesAssociateCount of type integer and initialize them to 0.
         int managerCount = 0;
         int salesAssociateCount = 0;
+        int securityGuardsCount = 0;
 
         //2. Declare & initialize an object for PrintWriter class and use the file name "outputFile.txt" to write the corresponding data
         PrintWriter pwd = new PrintWriter(new File("outputFile.txt"));
@@ -38,6 +39,8 @@ public class StoreDriver {
         List<Manager> managerList = new ArrayList<Manager>();
         //5. Declare and initialize a List object of type SalesAssociate as "salesAssociateList", and initialize the object as an ArrayList. 
         List<SalesAssociate> SalesAssociateList = new ArrayList<SalesAssociate>();
+        List<SecurityGuard> securityGuardList = new ArrayList<>();
+
         //6. While inputFile.txt has more data(While loop starts here) {
         while (sc.hasNext()) {
 
@@ -68,7 +71,18 @@ public class StoreDriver {
                 String str = sc.nextLine();
                 managerList.add(manager);
 
-            } else {
+            } 
+            else if (employeeType.equals("SecurityGuard")) {
+                boolean isNightShift = sc.nextBoolean();
+                SecurityGuard securityGuard = new SecurityGuard(numberOfHoursWorked, hourlyRate, storeDetails, basePay, empName, isNightShift);
+                securityGuardList.add(securityGuard);
+                if (sc.hasNext()) {
+                    sc.nextLine();
+                }
+            }
+
+            
+            else {
                 double salesRate = sc.nextDouble();
                 SalesAssociate salesAssociate = new SalesAssociate(salesRate, numberOfHoursWorked, hourlyRate, storeDetails, empName, basePay);
                 SalesAssociateList.add(salesAssociate);
@@ -113,6 +127,30 @@ public class StoreDriver {
                 System.out.println("No, he needs to work harder\n");
             }
 
+        }
+        
+        System.out.println("******************************************************");
+        System.out.println("Number of employees working as SECURITY GUARDS are: " + securityGuardList.size());
+        System.out.println("******************************************************");
+        pwd.println("******************************************************");
+        pwd.println("Number of employees working as SECURITY GUARDS are: " + securityGuardList.size());
+        pwd.println("******************************************************");
+        
+        for (SecurityGuard securityGuard : securityGuardList) {
+            securityGuardsCount++;
+            System.out.println(securityGuardsCount + ". Security Guard Details:");
+            System.out.println(securityGuard);
+            pwd.println(securityGuardsCount + ". Security Guard Details:");
+            pwd.println(securityGuard);
+            System.out.println("Gross Payment: $" + String.format("%.1f", securityGuard.calculatePay()));
+            pwd.println("Gross Payment: $" + String.format("%.1f", securityGuard.calculatePay()));
+
+            System.out.print("Is " + securityGuard.getEmployeeName() + " eligible for promotion? ");
+            if (securityGuard.checkPromotionEligibility()) {
+                System.out.println("Yes, he/she is eligible\n");
+            } else {
+                System.out.println("No, he/she needs to work harder\n");
+            }
         }
 
         //   For Loop ends here

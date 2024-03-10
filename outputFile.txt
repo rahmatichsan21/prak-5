@@ -13,6 +13,18 @@ Percentage of sales done: 20.00%
 Gross Payment: $6380.0
 Remaining store revenue: $36253.8
 ******************************************************
+Number of employees working as SECURITY GUARDS are: 1
+******************************************************
+1. Security Guard Details:
+Store Details: Store789
+Employee Name: Jack Black
+Base Pay: $15.0
+Number of Hours worked: 40.0hrs
+Payment Rate per hour: $60.0/hr
+
+Night Shift: Yes
+Gross Payment: $2415.0
+******************************************************
 Number of employees working as SALES ASSOCIATES are: 2
 ******************************************************
 Store Details: Store456
